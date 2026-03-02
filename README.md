@@ -1,63 +1,108 @@
-# Free TTS - VozCraft
+# 🎙️ VozCraft – Free TTS en el Navegador
 
-**Texto a Voz GRATIS en tiempo real** 🌍🔊  
-Genera audio de alta calidad a partir de texto **sin costo alguno**, directamente en tu navegador.
+**Convierte texto en voz GRATIS y en tiempo real** 🌍🔊
+Genera audio de alta calidad directamente desde tu navegador, sin servidores, sin API keys y sin costos.
 
-Demo en vivo:  
-→ https://stackblitz.com/edit/vitejs-vite-u38a4ngv (puedes forkear y probar al instante)
+---
 
-https://github.com/MateoRiosdev/Free-TTS-VozCraft
+## 🚀 ¿Qué es VozCraft?
 
-## Características principales
+VozCraft es una aplicación web construida con React que utiliza la **Web Speech API** del navegador para convertir texto en voz de manera instantánea.
 
-- 🎙️ **100% Gratuito** – sin suscripciones, sin límites diarios, sin API keys
-- ⚡ Generación en **tiempo real** (usa la tecnología nativa del navegador)
-- 🌎 Soporte para **múltiples idiomas y acentos**
-- Interfaz limpia y fácil de usar
-- Copia el texto → selecciona voz → genera audio → descarga o reproduce
-- Funciona en la mayoría de navegadores modernos (Chrome, Edge, Safari, Firefox*, etc.)
+ > No depende de servicios externos.
+ > No usa backend.
+ > Todo el procesamiento ocurre localmente en el navegador del usuario.
 
-*Nota: La calidad y disponibilidad de voces depende del navegador y del sistema operativo.
+---
 
-## Voces disponibles
+## ✨ Características principales
 
-| Idioma / Región          | Código     | Bandera   | Ejemplo de uso recomendado              |
-|--------------------------|------------|-----------|------------------------------------------|
-| Español (México)         | es-MX      | 🇲🇽       | Contenido mexicano, doblajes neutros     |
-| Español (España)         | es-ES      | 🇪🇸       | España, podcasts, audiolibros europeos   |
-| Español (Argentina)      | es-AR      | 🇦🇷       | Acento rioplatense, voseo                |
-| Español (Colombia)       | es-CO      | 🇨🇴       | Acento neutro andino                     |
-| Español (Chile)          | es-CL      | 🇨🇱       | Chile, contenido juvenil                 |
-| Español (Venezuela)      | es-VE      | 🇻🇪       | Acento caribeño venezolano               |
-| English (United States)  | en-US      | 🇺🇸       | Inglés americano estándar                |
-| English (United Kingdom) | en-GB      | 🇬🇧       | Inglés británico (Received Pronunciation)|
-| Português (Brasil)       | pt-BR      | 🇧🇷       | Portugués brasileño                      |
-| Français                 | fr-FR      | 🇫🇷       | Francés de Francia                       |
-| Deutsch                  | de-DE      | 🇩🇪       | Alemán estándar                          |
-| Italiano                 | it-IT      | 🇮🇹       | Italiano estándar                        |
+* 🎙️ **100% Gratuito**
+* 🔐 Sin API keys
+* ⚡ Generación en tiempo real
+* 🌎 Detección automática de todas las voces disponibles en el sistema
+* 🎛️ Selección dinámica de idioma y voz
+* ▶️ Reproducción inmediata
+* 📱 Diseño responsive
+* 🖥️ Compatible con navegadores modernos (Chrome, Edge, Safari, Firefox*)
 
-(Se pueden añadir más voces si el navegador las soporta)
+---
 
-## Tecnologías utilizadas
+## 🌍 Idiomas
 
-- React 18 + Vite ⚡ (entorno de desarrollo ultrarrápido)
-- Web Speech API (SpeechSynthesis) – motor TTS nativo del navegador
-- Tailwind CSS o CSS vanilla (según tu implementación actual)
-- Interfaz responsive y minimalista
+La aplicación detecta automáticamente todas los idiomas disponibles mediante:
 
-## Cómo usarlo localmente
+```
+window.speechSynthesis.getVoices()
+```
+
+Esto significa que puede soportar decenas de idiomas dependiendo del entorno del usuario, por ejemplo:
+
+* 🇲🇽 Español (México)
+* 🇪🇸 Español (España)
+* 🇦🇷 Español (Argentina)
+* 🇨🇴 Español (Colombia)
+* 🇨🇱 Español (Chile)
+* 🇺🇸 Inglés (Estados Unidos)
+* 🇬🇧 Inglés (Reino Unido)
+* 🇧🇷 Portugués (Brasil)
+* 🇫🇷 Francés
+* 🇩🇪 Alemán
+* 🇮🇹 Italiano
+* 🇯🇵 Japonés
+* 🇰🇷 Coreano
+* 🇨🇳 Chino
+* 🇷🇺 Ruso
+* 🇸🇦 Árabe
+* 🇮🇳 Hindi
+* 🇹🇷 Turco
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* ⚛️ React 18
+* ⚡ Vite
+* 🗣️ Web Speech API (SpeechSynthesis)
+* 🎨 Tailwind CSS / CSS Vanilla
+* 📱 Diseño responsive
+
+---
+
+## 📦 Instalación local
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/MateoRiosdev/Free-TTS-VozCraft.git
+git clone https://github.com/tuusuario/tu-repo.git
 
-# 2. Entrar a la carpeta
-cd Free-TTS-VozCraft
+# 2. Entrar al proyecto
+cd tu-repo
 
 # 3. Instalar dependencias
 npm install
 
-# 4. Iniciar el servidor de desarrollo
+# 4. Iniciar el servidor
 npm run dev
+```
 
-Abre http://localhost:5173 (o el puerto que muestre Vite)
+Luego abre:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧠 ¿Cómo funciona internamente?
+
+1. El usuario escribe un texto.
+2. Se cargan las voces disponibles del navegador.
+3. Se selecciona una voz.
+4. Se crea un `SpeechSynthesisUtterance`.
+5. El navegador genera el audio en tiempo real.
+6. El usuario puede editar el nombre del audio.
+7. El usuario puede descargar el audio en formato "mp3" y "wav"
+8. El usuario puede eliminar y/o guardar los audios en un archivo "json"
+* 🌙 Modo oscuro
+* 📲 Convertir en PWA
+* 🎙️ Grabación del audio generado
