@@ -18,6 +18,9 @@ VozCraft es una aplicación web construida con React que utiliza la **Web Speech
 ## ✨ Características principales
 
 * 🎙️ **100% Gratuito**
+* 🌙 Modo oscuro
+* 📲 Convertir en PWA
+* 🎙️ Grabación del audio generado
 * 🔐 Sin API keys
 * ⚡ Generación en tiempo real
 * 🌎 Detección automática de todas las voces disponibles en el sistema
@@ -103,6 +106,3 @@ http://localhost:5173
 6. El usuario puede editar el nombre del audio.
 7. El usuario puede descargar el audio en formato "mp3" y "wav"
 8. El usuario puede eliminar y/o guardar los audios en un archivo "json"
-* 🌙 Modo oscuro
-* 📲 Convertir en PWA
-* 🎙️ Grabación del audio generado
